@@ -35,6 +35,9 @@ body {
     font-size: var(--fs-body);
     background: var(--color-neutral-light-grayish-blue);
     font-family: var(--ff);
+    overflow: scroll;  
+    scrollbar-color: var(--color-neutral-border);
+    scrollbar-width: thick;
 }
 
 h1, h2{
