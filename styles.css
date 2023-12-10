@@ -10,10 +10,11 @@
 
     --color-neutral-light-gray: hsl(0, 0%, 81%);
     --color-neutral-light-grayish-blue: hsl(210, 46%, 95%);
+    --color-neutral-border: #8654d6;
 
     --fs-body: 13.5px;
 
-    --ff: "Barlow Semi Condensed";
+    --ff: "Barlow Semi Condensed", serif;
 
     --fw-regular: 500;
     --fw-bold: 600;
@@ -49,17 +50,43 @@ h1, h2{
 
 .content {
     display: grid;
-    gap: 1.25rem;
-    padding-block: 1rem;
+    gap: 1.5rem;
     width: min(95%, 70rem);
     margin-inline: auto;
 }
 
-.card {
-    border-radius: 15px;
-    padding: 2rem;
+.flex {
+    display: flex; 
+    align-items: center;
 }
 
+.img-container {
+    display: flex;
+    align-items: center;
+    margin-right: -10px;
+}
+
+.purple-border {
+    border: 3px solid var(--color-neutral-border);
+}
+
+.profile-pic {
+    width: min(56%);
+    border-radius: 50%;
+}
+
+.quote-img {
+    display: block;
+    background: url(./images/bg-pattern-quotation.svg) no-repeat;
+    background-size: 22.5%;
+    background-position: top right 18%;
+}
+
+.card {
+    border-radius: 15px;
+    padding: 1.975rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 10px 2px 50px;
+}
 
 .card-a {
     background-color: var(--color-primary-violet);
@@ -87,15 +114,19 @@ h1, h2{
 }
 
 h1 {
+    color: var(--color-primary-white);
     font-weight: var(--fw-regular);
-    font-size: .725rem;
-    line-height: 1.2rem;
+    font-size: .85rem;
 }
 
-
 h2 {
-    font-size: .700rem;
-    opacity: 70%;
+    font-size: .71rem;
+    opacity: 50%;
+    line-height: 1.4rem;
+}
+
+.card-b h2, .card-d h2 {
+    color: var(--color-neutral-light-grayish-blue);
 }
 
 .hook {
@@ -111,8 +142,12 @@ h2 {
     margin-bottom: 0;
 }
 
+.card-c h1, .card-e h1 {
+    color: var(--color-primary-grayish-blue);
+}
+
 .card-a > .hook, .card-b > .hook, .card-d > .hook {
-    color: var(--color-primary-white);
+    color: var(--color-neutral-light-grayish-blue);
 }
 
 .card-c .hook {
@@ -126,17 +161,8 @@ h2 {
 
 
 
-
-
-
-
-
-
-
-
-
 @media (min-width: 50em) {
- 
+    
     .grid-row-span-2{
       grid-column-start: 4;
       grid-row: 1 / span 2;
@@ -150,3 +176,52 @@ h2 {
         grid-column: span 2;
     }
 }
+
+@media only screen and (max-width: 51em) and (min-width: 23em) {
+    
+    .container {
+        padding: 30px 10px;
+    }
+
+    .content{ 
+        padding: 40px 25px;
+        grid-template-columns: 1fr;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .img-container {
+        margin-right: 0px;
+    }
+
+    .profile-pic {
+        width: min(75%);
+    }
+
+    .quote-img {
+        background-size: clamp(100px, 38%, 130px);
+        background-position: top right 12%;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+
+    .hook {
+        font-size: 22px;
+    }
+
+    .review {
+        font-size: 15px;
+    }
+}
+
+ 
