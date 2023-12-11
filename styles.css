@@ -29,15 +29,12 @@
 body {
     margin: 0;
     padding: 0; 
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     place-items: center;
     font-size: var(--fs-body);
     background: var(--color-neutral-light-grayish-blue);
     font-family: var(--ff);
-    overflow: scroll;  
-    scrollbar-color: var(--color-neutral-border);
-    scrollbar-width: thick;
 }
 
 h1, h2{
@@ -164,9 +161,7 @@ h2 {
 }
 
 
-
-
-@media (min-width: 50em) {
+@media (min-width: 65em) {
     
     .grid-row-span-2{
       grid-column-start: 4;
@@ -182,10 +177,11 @@ h2 {
     }
 }
 
-@media only screen and (max-width: 51em) and (min-width: 23em) {
+@media only screen and (max-width: 64em) and (min-width: 23em) {
     
     .container {
         padding: 30px 10px;
+        
     }
 
     .content{ 
